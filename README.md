@@ -19,7 +19,7 @@ To get started with the project, clone this repository and install the dependenc
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/web_template.git
+git clone https://github.com/twoheaven/web_template.git
 cd web_template
 ```
 
@@ -294,11 +294,3 @@ This will serve the production build on a local server.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### 설명:
-
-- **프로젝트 소개**: 이 템플릿은 React, Vite, TypeScript 등을 사용하여 빠르고 현대적인 웹 애플리케이션을 개발할 수 있도록 설정된 기본 템플릿입니다.
-- **설치 및 실행 방법**: 의존성 설치 및 개발 서버 실행 방법을 설명합니다.
-- **빌드 및 배포**: 프로젝트를 빌드하고 배포하는 방법을 설명합니다.
-- **폴더 구조**: 프로젝트의 디렉터리 구조를 설명하여, 각 폴더의 용도와 내용을 명확히 합니다.
-- **라이센스**: 사용자가 프로젝트를 사용하는 조건을 명시합니다.
