@@ -83,140 +83,129 @@ index.html               # Main HTML file for React mounting with `div#root`
 
 ## **`src/`**
 
-애플리케이션의 모든 소스 코드가 포함된 최상위 폴더입니다. 디렉터리별로 역할과 사용 목적을 분리하여 관리합니다.
+This is the root folder that contains all the source code for the application. The directories are organized by their role and purpose.
 
 ---
 
 ### **1. `assets/`**
 
-애플리케이션에서 사용되는 정적 리소스(이미지, 폰트 등)를 저장하는 폴더입니다.
+This folder stores static resources (images, fonts, etc.) used in the application.
 
 - **`images/`**:  
-  PNG, JPG, SVG 등 이미지 파일을 저장합니다. 로고, 배경 이미지, 아이콘 등 정적 이미지 리소스가 여기에 위치합니다.  
-  예: `logo.png`, `background.jpg`
+  Stores image files such as PNG, JPG, SVG, etc., used across the project, including logos, background images, icons, etc.  
+  Example: `logo.png`, `background.jpg`
 - **`fonts/`**:  
-  웹폰트를 저장합니다. Google Fonts나 외부 리소스를 다운로드하거나 커스텀 폰트를 포함할 수 있습니다.  
-  예: `Roboto.woff`, `OpenSans.ttf`
+  Stores font files. It can include Google Fonts, external resources, or custom fonts.  
+  Example: `Roboto.woff`, `OpenSans.ttf`
 
 ---
 
 ### **2. `components/`**
 
-애플리케이션의 재사용 가능한 UI 컴포넌트를 저장합니다. 역할에 따라 `common/`, `layout/`, `feature/`로 세분화됩니다.
+This folder contains reusable UI components for the application, organized into `common/`, `layout/`, and `feature/`.
 
 - **`common/`**:  
-  모든 화면에서 공통으로 사용되는 작은 단위의 UI 컴포넌트들을 포함합니다.
-  - **`Button/`**: 버튼 컴포넌트.
-    - `Button.tsx`: 버튼의 동작과 이벤트를 정의하는 메인 파일.
-    - `Button.styles.ts`: 스타일 관련 코드(CSS-in-JS 방식).
-    - `index.ts`: 버튼을 export하여 외부에서 쉽게 접근 가능하게 함.
-  - **`Input/`**: 입력 필드 관련 컴포넌트. 텍스트 박스, 체크박스 등이 포함될 수 있음.
+  Contains small UI components used across all screens.
+  - **`Button/`**: Button component.
+    - `Button.tsx`: The main file defining the button's behavior and events.
+    - `Button.styles.ts`: Styles related to the Button component (CSS-in-JS).
+    - `index.ts`: Exports the Button component for easy access from other parts of the project.
+  - **`Input/`**: Input field components such as text boxes and checkboxes.
 - **`layout/`**:  
-  페이지의 레이아웃을 구성하는 컴포넌트들.
-  - **`Header/`**: 헤더 영역(로고, 네비게이션 메뉴 등).
-  - **`Footer/`**: 푸터 영역(저작권, 링크 등).
-  - **`Sidebar/`**: 사이드바(메뉴, 설정 등).
+  Contains components that define the layout of the page.
+  - **`Header/`**: Header area (logo, navigation menu, etc.).
+  - **`Footer/`**: Footer area (copyright, links, etc.).
+  - **`Sidebar/`**: Sidebar (menus, settings, etc.).
 - **`feature/`**:  
-  특정 기능에 종속적인 컴포넌트들.
-  - **`Auth/`**: 로그인, 회원가입과 관련된 UI.
-  - **`Dashboard/`**: 대시보드와 관련된 UI.
+  Contains components specific to certain features.
+  - **`Auth/`**: UI related to login, sign-up, etc.
+  - **`Dashboard/`**: UI related to the dashboard.
 
 ---
 
 ### **3. `pages/`**
 
-라우팅 구조를 담당하며, 각각의 페이지에 해당하는 컴포넌트를 포함합니다.
+This folder contains page-level components, which are tied to specific routes.
 
 - **`Home/`**:  
-  메인 홈 페이지. 예: 랜딩 페이지, 소개 페이지.
+  The main home page, such as landing pages or introductory pages.
 - **`Login/`**:  
-  로그인 페이지. 예: 로그인 폼, 소셜 로그인 버튼.
-
+  The login page, including forms for user login and social login buttons.
 - **`Dashboard/`**:  
-  대시보드 페이지. 관리자 페이지 또는 사용자 통계를 보여주는 화면.
+  The dashboard page, typically used for displaying user statistics or management tools.
 
 ---
 
 ### **4. `hooks/`**
 
-React의 **Custom Hooks**를 저장하는 폴더로, 상태 관리나 재사용 가능한 로직을 처리합니다.
+This folder contains custom React hooks for managing state or reusable logic.
 
 - **`useAuth.ts`**:  
-  인증 관련 로직을 처리하는 커스텀 훅.  
-  예: 로그인 상태 확인, 사용자 정보 가져오기.
+  Custom hook to handle authentication logic, such as checking login status and retrieving user information.
 - **`useForm.ts`**:  
-  폼 데이터를 관리하는 훅.  
-  예: 입력 값 유효성 검사, 상태 업데이트.
+  Custom hook for managing form data, such as handling input value validation and updating state.
 
 ---
 
 ### **5. `api/`**
 
-서버와의 통신을 담당하는 함수와 설정 파일을 포함합니다.
+This folder contains functions related to communicating with external APIs.
 
 - **`auth.ts`**:  
-  인증 관련 API 요청(로그인, 로그아웃, 회원가입 등).  
-  예: `POST /login`, `POST /register`.
-
+  Functions for authentication-related API calls such as login, logout, and registration.
 - **`user.ts`**:  
-  사용자 정보 관련 API 요청.  
-  예: `GET /user/:id`, `PUT /user/:id`.
+  Functions for handling user-related API requests, such as fetching or updating user data.
 
 ---
 
 ### **6. `utils/`**
 
-애플리케이션 전반에서 재사용 가능한 **유틸리티 함수**를 포함합니다.
+This folder contains utility functions that are reusable across the application.
 
 - **`format.ts`**:  
-  데이터 형식 변환 함수.  
-  예: 날짜 포맷팅, 통화 변환, 전화번호 포맷.
-
+  Utility functions for formatting data.  
+  Example: formatting dates, converting currencies, formatting phone numbers.
 - **`validation.ts`**:  
-  데이터 유효성 검사 함수.  
-  예: 이메일 형식 검증, 비밀번호 강도 확인.
+  Functions for input validation.  
+  Example: checking email format, verifying password strength.
 
 ---
 
 ### **7. `types/`**
 
-TypeScript에서 사용하는 **타입 정의 파일**을 포함합니다.
+This folder contains TypeScript type definitions.
 
 - **`user.ts`**:  
-  사용자 관련 타입 정의.  
-  예: `User`, `UserProfile`.
-
+  Type definitions related to users.  
+  Example: `User`, `UserProfile`.
 - **`common.ts`**:  
-  공통적으로 사용되는 타입 정의.  
-  예: `APIResponse`, `Error`.
+  Commonly used type definitions.  
+  Example: `APIResponse`, `Error`.
 
 ---
 
 ### **8. `styles/`**
 
-애플리케이션의 전역 스타일과 테마 설정을 포함합니다.
+This folder contains global style definitions and theme settings.
 
 - **`global.ts`**:  
-  전역 스타일 정의.  
-  예: `body`, `html`, 공통 클래스.
+  Global styles applied across the application.  
+  Example: styles for `body`, `html`, and common classes.
 - **`theme.ts`**:  
-  테마 관련 설정.  
-  예: 색상 팔레트, 폰트 크기, 간격.
+  Theme-related settings such as color palette, font sizes, spacing, etc.
 
 ---
 
 ### **9. `store/`**
 
-상태 관리와 관련된 파일을 저장하는 폴더입니다.
+This folder contains state management files.
 
 - **`auth/`**:  
-  인증 상태와 관련된 Redux 또는 상태 관리 파일.
+  State management for authentication-related data.
 - **`user/`**:  
-  사용자 상태와 관련된 Redux 또는 상태 관리 파일.
+  State management for user-related data.
 
 ---
-
-markdown
 
 ## Features
 
@@ -294,3 +283,5 @@ This will serve the production build on a local server.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
